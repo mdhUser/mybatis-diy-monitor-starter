@@ -47,7 +47,7 @@ public class MybatisDivInterceptor implements Interceptor {
         } finally {
             if (proceedFlag) {
                 if (durationTime > mybatisDivProperties.getMonitorTimeThreshold() * 1000) {
-                    log.info("********************该ql超时了********************");
+                    log.info("********************该SQL超时了********************");
                     MappedStatement ms = (MappedStatement) invocation.getArgs()[0];
                     Object param = invocation.getArgs()[1];
                     BoundSql boundSql = ms.getBoundSql(param);
